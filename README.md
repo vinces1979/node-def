@@ -1,4 +1,4 @@
-#node-def
+# node-def
 
 **Keyword functions in node** ✨
 
@@ -21,21 +21,35 @@ npm install node-def
 ## Usage
 
 ```javascript
+
 const def = require('node-def');
+
 const foo = def('a1', 'a2', {o:false, server:null, timeout: 1000}, function(args){
     console.log(args)
 })
 
 foo({a1: 'yeah', server:'github'})
-```
-```json
-{  
+
+>> {  
    a1:'yeah',
    a2:undefined,
    o:false,
    server:'github',
    timeout:1000
 }
+
+const db = def('conns', {limit:1,rate:10,offset:0,page:0}, console.log)
+
+db(10, 3)
+>> { conns: 10, limit: 3, rate: 10, offset: 0, page: 0 }
+
+db.compact(10, 3)
+>> { conns: 10, limit: 3, rate: 10 }
+
+db(10, 3, {page:1})
+>>{ conns: 10, limit: 3, rate: 10, offset: 0, page: 1 }
+
+
 ```
 
 ## Usage
