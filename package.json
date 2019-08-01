@@ -1,6 +1,6 @@
 {
   "name": "node-def",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Python inspired function wrapper enables both argumets and keyword argumets",
   "main": "./lib/index.js",
   "scripts": {
